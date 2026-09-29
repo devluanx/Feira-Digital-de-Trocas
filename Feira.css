@@ -1,0 +1,822 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --fundo: #f5f7fa;
+    --branco: #ffffff;
+    --texto: #172033;
+    --texto-secundario: #667085;
+    --borda: #e4e7ec;
+
+    --azul: #2563eb;
+    --azul-claro: #eff6ff;
+    --verde: #16a34a;
+    --verde-claro: #f0fdf4;
+    --vermelho: #dc2626;
+    --vermelho-claro: #fef2f2;
+    --laranja: #d97706;
+    --laranja-claro: #fffbeb;
+
+    --raio: 14px;
+}
+
+/* ================================
+   GERAL
+================================ */
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+
+    font-family: "Inter", sans-serif;
+
+    color: var(--texto);
+
+    background: var(--fundo);
+
+    padding-bottom: 60px;
+}
+
+button,
+input,
+select,
+textarea {
+    font-family: inherit;
+}
+
+/* ================================
+   TOPO
+================================ */
+
+.bannerTopo {
+    background: var(--branco);
+
+    border-bottom: 1px solid var(--borda);
+
+    padding: 70px 20px 80px;
+
+    text-align: center;
+}
+
+.bannerTopo h1 {
+    font-size: clamp(38px, 6vw, 64px);
+
+    font-weight: 800;
+
+    letter-spacing: -2.5px;
+
+    color: var(--texto);
+
+    margin-bottom: 14px;
+}
+
+.bannerTopo h2 {
+    font-size: 16px;
+
+    font-weight: 400;
+
+    color: var(--texto-secundario);
+
+    line-height: 1.6;
+}
+
+/* ================================
+   CONTAINER
+================================ */
+
+.container {
+    width: min(1100px, calc(100% - 32px));
+
+    margin: -35px auto 0;
+
+    position: relative;
+}
+
+/* ================================
+   CADASTRO
+================================ */
+
+.cadastro {
+    background: var(--branco);
+
+    border: 1px solid var(--borda);
+
+    border-radius: var(--raio);
+
+    padding: 30px;
+
+    box-shadow:
+        0 8px 25px rgba(16, 24, 40, 0.05);
+}
+
+.cadastro > p {
+    color: var(--texto);
+
+    font-size: 22px;
+
+    font-weight: 700;
+
+    margin-bottom: 25px;
+}
+
+.cadastro > p::after {
+    content: "";
+
+    display: block;
+
+    width: 35px;
+    height: 3px;
+
+    margin-top: 9px;
+
+    background: var(--azul);
+
+    border-radius: 10px;
+}
+
+/* ================================
+   FORMULÁRIO
+================================ */
+
+#formId {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 20px;
+}
+
+.campoDeCadastro,
+.campoCategoria,
+.containerConser,
+.containerDispon,
+.campoRespon,
+.campodeDescricao {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+}
+
+.campodeDescricao {
+    grid-column: 1 / -1;
+}
+
+.inputELabel,
+.containerCateg {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+}
+
+label,
+.campoRespon p {
+    color: #344054;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.3px;
+}
+
+/* ================================
+   CAMPOS
+================================ */
+
+input,
+select,
+textarea {
+    width: 100%;
+
+    border: 1px solid var(--borda);
+
+    outline: none;
+
+    background: #fff;
+
+    color: var(--texto);
+
+    border-radius: 10px;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+input,
+select {
+    height: 48px;
+
+    padding: 0 14px;
+}
+
+textarea {
+    min-height: 110px;
+
+    padding: 14px;
+
+    resize: vertical;
+
+    line-height: 1.5;
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: #98a2b3;
+}
+
+input:hover,
+select:hover,
+textarea:hover {
+    border-color: #cbd5e1;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: var(--azul);
+
+    box-shadow:
+        0 0 0 3px rgba(37, 99, 235, 0.10);
+}
+
+select {
+    cursor: pointer;
+}
+
+select option {
+    color: var(--texto);
+    background: white;
+}
+
+/* ================================
+   BOTÕES
+================================ */
+
+#btnAdicionar,
+#btnCarregarExemplos,
+#btnApagarTudo {
+    border-radius: 10px;
+
+    min-height: 46px;
+
+    padding: 0 18px;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+#btnAdicionar {
+    grid-column: 1 / -1;
+
+    border: none;
+
+    color: white;
+
+    background: var(--azul);
+}
+
+#btnAdicionar:hover {
+    background: #1d4ed8;
+
+    transform: translateY(-1px);
+}
+
+#btnCarregarExemplos,
+#btnApagarTudo {
+    margin-top: 12px;
+
+    background: white;
+
+    border: 1px solid var(--borda);
+
+    color: #475467;
+}
+
+#btnCarregarExemplos:hover {
+    background: var(--azul-claro);
+
+    border-color: #bfdbfe;
+
+    color: var(--azul);
+}
+
+#btnApagarTudo:hover {
+    background: var(--vermelho-claro);
+
+    border-color: #fecaca;
+
+    color: var(--vermelho);
+}
+
+/* ================================
+   MENSAGEM
+================================ */
+
+#mensagem {
+    display: none;
+
+    margin: 18px 0;
+
+    padding: 12px 15px;
+
+    border-radius: 9px;
+
+    font-size: 13px;
+
+    font-weight: 500;
+}
+
+#mensagem.sucesso {
+    color: var(--verde);
+
+    background: var(--verde-claro);
+
+    border: 1px solid #bbf7d0;
+}
+
+#mensagem.erro {
+    color: var(--vermelho);
+
+    background: var(--vermelho-claro);
+
+    border: 1px solid #fecaca;
+}
+
+/* ================================
+   RESUMO
+================================ */
+
+.resumo {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 14px;
+
+    margin-top: 20px;
+}
+
+.boxResumo {
+    background: var(--branco);
+
+    border: 1px solid var(--borda);
+
+    border-radius: var(--raio);
+
+    padding: 20px;
+
+    min-height: 115px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: space-between;
+
+    box-shadow:
+        0 4px 15px rgba(16, 24, 40, 0.03);
+
+    transition:
+        border-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.boxResumo:hover {
+    border-color: #cbd5e1;
+
+    transform: translateY(-2px);
+}
+
+.boxResumo h3 {
+    color: var(--texto-secundario);
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.5px;
+}
+
+.boxResumo span {
+    color: var(--texto);
+
+    font-size: 34px;
+
+    font-weight: 700;
+
+    letter-spacing: -1px;
+}
+
+/* ================================
+   PESQUISA
+================================ */
+
+.pesquisa {
+    margin-top: 45px;
+}
+
+.pesquisa > h2 {
+    color: var(--texto);
+
+    font-size: 25px;
+
+    font-weight: 700;
+
+    margin-bottom: 16px;
+}
+
+#pesquisa {
+    height: 50px;
+
+    background: var(--branco);
+
+    padding: 0 16px;
+
+    margin-bottom: 16px;
+
+    font-size: 14px;
+}
+
+/* ================================
+   FILTROS
+================================ */
+
+.filtros,
+.tipo,
+.situacao {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    margin-right: 8px;
+
+    margin-bottom: 20px;
+}
+
+.filtros label,
+.tipo label,
+.situacao label {
+    color: var(--texto-secundario);
+
+    font-size: 11px;
+
+    text-transform: none;
+
+    letter-spacing: 0;
+}
+
+.filtros select,
+.tipo select,
+.situacao select {
+    width: auto;
+
+    min-width: 125px;
+
+    height: 40px;
+
+    padding: 0 12px;
+
+    font-size: 12px;
+}
+
+/* ================================
+   LISTA
+================================ */
+
+#listaItens {
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fill, minmax(280px, 1fr));
+
+    gap: 15px;
+
+    margin-top: 5px;
+}
+
+/* ================================
+   CARD
+================================ */
+
+.card {
+    display: flex;
+
+    flex-direction: column;
+
+    min-height: 300px;
+
+    padding: 22px;
+
+    background: var(--branco);
+
+    border: 1px solid var(--borda);
+
+    border-radius: var(--raio);
+
+    box-shadow:
+        0 5px 18px rgba(16, 24, 40, 0.04);
+
+    animation: aparecer 0.25s ease;
+
+    transition:
+        transform 0.2s ease,
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-3px);
+
+    border-color: #cbd5e1;
+
+    box-shadow:
+        0 10px 25px rgba(16, 24, 40, 0.07);
+}
+
+.card h3 {
+    color: var(--texto);
+
+    font-size: 19px;
+
+    font-weight: 700;
+
+    line-height: 1.35;
+
+    margin-bottom: 17px;
+
+    overflow-wrap: anywhere;
+}
+
+.card p {
+    color: var(--texto-secundario);
+
+    font-size: 12px;
+
+    line-height: 1.6;
+
+    margin-bottom: 7px;
+}
+
+.card strong {
+    color: #475467;
+
+    font-weight: 600;
+}
+
+/* ================================
+   CARD RESERVADO
+================================ */
+
+.card.reservado {
+    border-color: #fde68a;
+
+    background: #fffdf7;
+}
+
+/* ================================
+   AÇÕES
+================================ */
+
+.acoes {
+    display: flex;
+
+    gap: 8px;
+
+    margin-top: auto;
+
+    padding-top: 18px;
+}
+
+.acoes button {
+    flex: 1;
+
+    height: 40px;
+
+    border-radius: 9px;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+.acoes button:hover {
+    transform: translateY(-1px);
+}
+
+.btnReservar {
+    color: var(--verde);
+
+    background: var(--verde-claro);
+
+    border: 1px solid #bbf7d0;
+}
+
+.btnReservar:hover {
+    background: #dcfce7;
+}
+
+.btnExcluir {
+    color: var(--vermelho);
+
+    background: var(--vermelho-claro);
+
+    border: 1px solid #fecaca;
+}
+
+.btnExcluir:hover {
+    background: #fee2e2;
+}
+
+/* ================================
+   LISTA VAZIA
+================================ */
+
+#listaVazia {
+    display: block;
+
+    padding: 60px 20px;
+
+    text-align: center;
+
+    color: var(--texto-secundario);
+
+    font-size: 13px;
+
+    background: var(--branco);
+
+    border: 1px dashed var(--borda);
+
+    border-radius: var(--raio);
+}
+
+/* ================================
+   ANIMAÇÃO
+================================ */
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+
+        transform: translateY(8px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform: translateY(0);
+    }
+}
+
+/* ================================
+   TABLET
+================================ */
+
+@media (max-width: 850px) {
+
+    #formId {
+        grid-template-columns: 1fr;
+    }
+
+    .campodeDescricao,
+    #btnAdicionar {
+        grid-column: auto;
+    }
+
+    .resumo {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* ================================
+   CELULAR
+================================ */
+
+@media (max-width: 600px) {
+
+    .bannerTopo {
+        padding: 55px 20px 70px;
+    }
+
+    .bannerTopo h1 {
+        font-size: 42px;
+
+        letter-spacing: -1.8px;
+    }
+
+    .bannerTopo h2 {
+        font-size: 14px;
+    }
+
+    .container {
+        width: calc(100% - 20px);
+
+        margin-top: -25px;
+    }
+
+    .cadastro {
+        padding: 20px;
+    }
+
+    .resumo {
+        grid-template-columns: 1fr 1fr;
+
+        gap: 10px;
+    }
+
+    .boxResumo {
+        min-height: 100px;
+
+        padding: 16px;
+    }
+
+    .boxResumo span {
+        font-size: 29px;
+    }
+
+    #listaItens {
+        grid-template-columns: 1fr;
+    }
+
+    .filtros,
+    .tipo,
+    .situacao {
+        display: flex;
+
+        width: 100%;
+
+        margin-right: 0;
+    }
+
+    .filtros select,
+    .tipo select,
+    .situacao select {
+        flex: 1;
+
+        width: 100%;
+    }
+}
+
+/* ================================
+   CELULAR PEQUENO
+================================ */
+
+@media (max-width: 400px) {
+
+    .bannerTopo h1 {
+        font-size: 36px;
+    }
+
+    .cadastro {
+        padding: 17px;
+    }
+
+    .resumo {
+        gap: 8px;
+    }
+
+    .boxResumo {
+        padding: 13px;
+    }
+
+    .boxResumo span {
+        font-size: 25px;
+    }
+
+    .acoes {
+        flex-direction: column;
+    }
+}
+

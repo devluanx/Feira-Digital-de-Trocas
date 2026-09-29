@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feira Digital de Trocas</title>
+    <link rel="stylesheet" href="Feira.css">
+</head>
+
+<body>
+    <header class="bannerTopo">
+        <h1>Feira Digital de Troca</h1>
+        <h2>Cadastre itens para troca, doação ou venda</h2>
+     
+    </header>
+    <main class="container">
+        <section class="cadastro">
+            <p>Cadastre seu item</p>
+            <form id="formId">
+        </section>
+
+        <div class="campoDeCadastro">
+            <div class="inputELabel">
+                <label for="nome">Nome do Produto ^</label>
+            </div>
+            <input type="text" id="nomeDoProduto" placeholder="Ex.:Air Max 95">
+        </div>
+
+        <div class="campoCategoria">
+
+            <div class="containerCateg">
+                <label for="categoria">Categoria ^</label>
+
+                <select id="categoria">
+                    <option value="" disabled selected hidden>Selecione</option>
+                    <option>Eletrônicos</option>
+                    <option>Vestuários</option>
+                    <option>Livros</option>
+                    <option>Esportes</option>
+                    <option>Brinquedos</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="containerConser">
+
+        <label for="categoria">Estado de Conservação ^</label>
+        <select id="qualidade">
+            <option value="" disabled selected hidden>Selecione</option>
+            <option>Ótimo</option>
+            <option>Bom</option>
+            <option>Usável</option>
+            <option>Ruim</option>
+        </select>
+    </div>
+
+
+<div class="containerDispon">
+        <label for="disponibilidade">Disponibilidade ^</label>
+        <select id="disponibilidade">
+            <option value="" disabled selected hidden>Selecione</option>
+            <option>Doação</option>
+            <option>Troca</option>
+            <option>Vender</option>
+        </select>
+</div>
+<div class="campoRespon">
+        <p>Responsável*</p>
+        <input type="text" id="responsavel" placeholder="Nome do responsável">
+</div>
+        <div class="campodeDescricao">
+            <label for="descricao">Descrição*</label>
+            <textarea id="descreverProduto" name="descrever" rows="4" cols="180" maxlength="200"
+                placeholder="Descreva brevemente seu produto"></textarea>
+        </div>
+
+        <button id="btnAdicionar" type="submit">Adicionar produto</button>
+        </form>
+
+        <button id="btnCarregarExemplos">Carregar exemplos</button>
+        <button id="btnApagarTudo">Limpar tudo</button>
+
+        </section>
+        <section class="resumo">
+            <div class="boxResumo">
+                <h3>Total</h3>
+                <span id="totalItens">0</span>
+            </div>
+
+            <div class="boxResumo">
+                <h3>Disponiveis</h3>
+                <span id="totalDisponiveis">0</span>
+            </div>
+
+            
+
+            <div class="boxResumo">
+                <h3>Reservados</h3>
+                <span id="totalReservados">0</span>
+            </div>
+
+            <div class="boxResumo">
+                <h3>Doação</h3>
+                <span id="totalDoados">0</span>
+            </div>
+        </section>
+        <section class="pesquisa">
+            <h2>Pesquisar</h2>
+
+            <input type="text" id="pesquisa" placeholder="Pesquisar item...">
+
+            <div class="filtros">
+                <label for="filtro">Filtros</label>
+                <select id="filtroCategorias">
+                    <option value="">Todos</option>
+                    <option>Eletrônicos</option>
+                    <option>Vestuário</option>
+                    <option>Livros</option>
+                    <option>Esportes</option>
+                    <option>Brinquedos</option>
+                </select>
+            </div>
+
+            <div class="tipo">
+                <label for="tipoDoProduto">Tipo</label>
+                <select id="modoDeVenda">
+                    <option value="">Todos</option>
+                    <option>Troca</option>
+                    <option>Doação</option>
+                    <option>Venda</option>
+                </select>
+            </div>
+
+            <div class="situacao">
+                <label for="tipoDaSituacao">Situação</label>
+                <select id="qualidade">
+                    <option value="">Todos</option>
+                    <option>Ótimo</option>
+                    <option>Bom</option>
+                    <option>Usável</option>
+                    <option>Ruim</option>
+                </select>
+            </div>
+
+            <section>
+                <div id="mensagem"></div>
+                <p id="listaVazia">
+                    Nenhum item encontrado
+                </p>
+<div id="listaItens"></div>
+            </section>
+
+    </main>
+
+    <script src="Feira.js"></script>
+</body>
+
+</html>
